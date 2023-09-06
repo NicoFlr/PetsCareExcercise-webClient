@@ -1,0 +1,25 @@
+.theme--light.v-data-table > .v-data-table__wrapper > table > thead > tr > th,
+.theme--light.v-data-table .v-data-table-header th.sortable:hover,
+.theme--light.v-data-table .v-data-table-header th.sortable.active,
+.theme--dark.v-data-table > .v-data-table__wrapper > table > thead > tr > th,
+.theme--dark.v-data-table .v-data-table-header th.sortable:hover,
+.theme--dark.v-data-table .v-data-table-header th.sortable.active {
+  color: var(--v-primary-base);
+}
+
+.default-alert {
+  color:red;
+  font-weight: bold;
+  padding-left: 35px; 
+  padding-top: 100px;
+}
+
+.required-field .v-label::after {
+  content: " *";
+  color: red;
+}
+
+.v-application {
+  background-color:var(--v-backgroundColor-base) !important;
+}
+
