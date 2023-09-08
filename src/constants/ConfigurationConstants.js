@@ -1,6 +1,7 @@
-export const BUSINESS_ID_RECTIFICATION = '8880513e-d782-42c5-a026-3b45c4f67123';
-export const DEFAULT_CURRENCY = 'BOB';
+/*export const BUSINESS_ID_RECTIFICATION = '8880513e-d782-42c5-a026-3b45c4f67123';
+export const DEFAULT_CURRENCY = 'BOB';*/
 export const EMPTY_GUID = '00000000-0000-0000-0000-000000000000';
+/*
 export const WORKER_ROLE_ID = '9234F19B-2544-4178-A6DA-224A13E8734E';
 export const ADMIN_ROLE_ID = '1D5C67AE-D2C7-489A-B853-F5F582D1A174';
 export const SUPERVISOR_ROLE_ID = '6EF7E1E3-9BF8-45E9-9D79-9EF93BD31861';
@@ -17,4 +18,4 @@ export const ALL = 'all';
 export const FIVE_LAST_DAYS = '5LastDays';
 export const TODAY = 'today';
 export const WORKERS = 'workers';
-export const ORDERS = 'orders';
+export const ORDERS = 'orders';*/

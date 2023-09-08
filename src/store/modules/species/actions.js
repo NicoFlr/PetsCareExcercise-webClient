@@ -3,7 +3,23 @@
 import axios from 'axios';
 import { PETSCARE_API_URL } from '../../../constants/Environment';
 
-const retrieveAllSpecies = async ({ dispatch, commit }, options) => {
+const retrieveAllSpecies = async ({ dispatch, commit }) => {
+  dispatch('loading/setIsSpeciesLoading', true, { root: true });
+  try {
+    await axios
+      .get(
+        `${PETSCARE_API_URL}/species`
+      )
+      .then(response => {
+        commit('setAllSpecies', response.data._embedded.species);
+      });
+    dispatch('loading/setIsSpeciesLoading', false, { root: true });
+  } catch (error) {
+    console.error('There was an error while retrieving species' + error);
+  }
+};
+
+const retrieveAllSpeciesWithPagination = async ({ dispatch, commit }, options) => {
   dispatch('loading/setIsSpeciesLoading', true, { root: true });
   try {
     const { page, itemsPerPage } = options;
@@ -65,6 +81,7 @@ const removeSpecies = ({ commit }, speciesToDeleteId) => {
 
 export default {
   retrieveAllSpecies,
+  retrieveAllSpeciesWithPagination,
   addSpecies,
   updateSpecies,
   removeSpecies

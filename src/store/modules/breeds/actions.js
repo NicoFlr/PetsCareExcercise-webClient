@@ -3,7 +3,23 @@
 import axios from 'axios';
 import { PETSCARE_API_URL } from '../../../constants/Environment';
 
-const retrieveAllBreeds = async ({ dispatch, commit }, options) => {
+const retrieveAllBreeds = async ({ dispatch, commit }) => {
+  dispatch('loading/setIsBreedLoading', true, { root: true });
+  try {
+    await axios
+      .get(
+        `${PETSCARE_API_URL}/breeds`
+      )
+      .then(response => {
+        commit('setAllBreeds', response.data._embedded.breeds);
+      });
+    dispatch('loading/setIsBreedLoading', false, { root: true });
+  } catch (error) {
+    console.error('There was an error while retrieving Breeds: ' + error);
+  }
+};
+
+const retrieveAllBreedsPagination = async ({ dispatch, commit }, options) => {
   dispatch('loading/setIsBreedLoading', true, { root: true });
   try {
     const { page, itemsPerPage } = options;
@@ -20,7 +36,7 @@ const retrieveAllBreeds = async ({ dispatch, commit }, options) => {
       });
     dispatch('loading/setIsBreedLoading', false, { root: true });
   } catch (error) {
-    console.error('There was an error while retrieving Breeds' + error);
+    console.error('There was an error while retrieving Breeds: ' + error);
   }
 };
 
@@ -65,6 +81,7 @@ const removeBreed = ({ commit }, breedToDeleteId) => {
 
 export default {
   retrieveAllBreeds,
+  retrieveAllBreedsPagination,
   addBreed,
   updateBreed,
   removeBreed

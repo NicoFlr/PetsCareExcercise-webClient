@@ -8,6 +8,8 @@ import owners from './modules/owners';
 import petCardex from './modules/petCardex';
 import pets from './modules/pets';
 import species from './modules/species';
+import loading from './modules/loading';
+import languageStorage from './modules/languageStorage';
 
 Vue.use(Vuex);
 Vue.use(VueAxios, axios);
@@ -18,7 +20,9 @@ const store = {
     owners,
     petCardex,
     pets,
-    species
+    species,
+    loading,
+    languageStorage
   }
 };
 

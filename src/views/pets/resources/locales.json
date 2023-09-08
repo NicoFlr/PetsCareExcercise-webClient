@@ -1,0 +1,28 @@
+{
+  "en": {
+    "name": "Name",
+    "of": "of",
+    "rowsPerPage": "Rows per page",
+    "pets": "Pets",
+    "loadingPleaseWait": "Loading, Please wait...",
+    "noPets": "No pets registered!",
+    "species": "Species",
+    "breed": "Breed",
+    "dateOfBirth": "Date of Birth",
+    "actions": "Actions",
+    "newPet": "New Pet"
+  },
+  "es": {
+    "name": "Nombre",
+    "of": "de",
+    "rowsPerPage": "Filas por pagina",
+    "pets":"Mascotas",
+    "loadingPleaseWait": "Cargando, Por favor espere...",
+    "noPets": "No existen mascotas registradas!",
+    "species": "Especie",
+    "breed": "Raza",
+    "dateOfBirth": "Fecha de nacimiento",
+    "actions": "Acciones",
+    "newPet": "Nueva Mascota"
+  }
+}
