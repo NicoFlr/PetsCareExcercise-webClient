@@ -1,9 +1,17 @@
 {
   "en": {
-    "petsCareSystem": "Pets-Care System"
+    "petsCareSystem": "Pets-Care System",
+    "pets": "Pets",
+    "owners": "Owners",
+    "breeds": "Breeds",
+    "species": "Species"
 
   },
   "es": {
-    "petsCareSystem": "Sistema de Pets-Care"
+    "petsCareSystem": "Sistema de Pets-Care",
+    "pets": "Mascotas",
+    "owners": "Duenios",
+    "breeds": "Razas",
+    "species": "Especies"
   }
 }

@@ -5,7 +5,7 @@ import VueAxios from 'vue-axios';
 
 import breeds from './modules/breeds';
 import owners from './modules/owners';
-import petCardex from './modules/petCardex';
+import petCardexes from './modules/petCardex';
 import pets from './modules/pets';
 import species from './modules/species';
 import loading from './modules/loading';
@@ -18,7 +18,7 @@ const store = {
   modules: {
     breeds,
     owners,
-    petCardex,
+    petCardexes,
     pets,
     species,
     loading,

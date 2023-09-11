@@ -1,0 +1,44 @@
+{
+  "en": {
+    "name": "Name",
+    "of": "of",
+    "rowsPerPage": "Rows per page",
+    "owners": "Owners",
+    "loadingPleaseWait": "Loading, Please wait...",
+    "noOwners": "No owners registered!",
+    "species": "Species",
+    "breed": "Breed",
+    "dateOfBirth": "Date of Birth",
+    "actions": "Actions",
+    "newOwner": "New Owner",
+    "ownerId": "ID #",
+    "fullName": "Full Name",
+    "countryCode": "Country code",
+    "phoneNumber": "Phone Number",
+
+    "birthDate": "Birth date",
+    "addressLine1": "Address Line 1",
+    "addressLine2": "Address Line 2"
+  },
+  "es": {
+    "name": "Nombre",
+    "of": "de",
+    "rowsPerPage": "Filas por pagina",
+    "owners":"Duenios",
+    "loadingPleaseWait": "Cargando, Por favor espere...",
+    "noOwners": "No existen duenios registrados!",
+    "species": "Especie",
+    "breed": "Raza",
+    "dateOfBirth": "Fecha de nacimiento",
+    "actions": "Acciones",
+    "newOwner": "Nuevo duenio",
+    "ownerId": "# de CI",
+    "fullName": "Nombre Completo",
+    "countryCode": "Codigo de Pais",
+    "phoneNumber": "Numero de telefono",
+
+    "birthDate": "Fecha de Nacimiento",
+    "addressLine1": "Direccion, linea 1",
+    "addressLine2": "Direccion, linea 2"
+  }
+}

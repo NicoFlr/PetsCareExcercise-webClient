@@ -6,5 +6,4 @@ export const PETSCARE_API_URL =
 
 // The block below is for the development environment
 
-  export const PETSCARE_API_URL =
-  'http://localhost:8888';
+export const PETSCARE_API_URL = 'http://localhost:8888/api';

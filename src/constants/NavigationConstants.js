@@ -1,50 +1,22 @@
-export const REPORT_ITEMS = [
+export const MAIN_ITEMS = [
   {
-    title: 'clients',
-    icon: 'mdi-account-outline',
-    path: 'clients-report'
+    title: 'pets',
+    icon: 'mdi-paw',
+    path: 'pets'
   },
   {
-    title: 'financial',
-    icon: 'mdi-finance',
-    path: 'financial-report'
+    title: 'owners',
+    icon: 'mdi-account',
+    path: 'owners'
   },
   {
-    title: 'debtors',
-    icon: 'mdi-hand-coin-outline',
-    path: 'debtors-report'
+    title: 'breeds',
+    icon: 'mdi-shape',
+    path: 'breeds'
   },
   {
-    title: 'unpicked',
-    icon: 'mdi-package-variant-closed',
-    path: 'unpicked-orders-report'
-  },
-  {
-    title: 'brands',
-    icon: 'mdi-engine-outline',
-    path: 'brands-report'
-  },
-  {
-    title: 'spareParts',
-    icon: 'mdi-car-door',
-    path: 'spare-parts-report'
-  },
-  {
-    title: 'workers',
-    icon: 'mdi-account-hard-hat-outline',
-    path: 'workers-report'
-  }
-];
-
-export const SERVICE_REPORT_SUB_ITEMS = [
-  {
-    title: 'servicesFrequency',
-    icon: 'mdi-sine-wave',
-    path: 'service-report'
-  },
-  {
-    title: 'servicesMoney',
-    icon: 'mdi-cash',
-    path: 'service-money-report'
+    title: 'species',
+    icon: 'mdi-cat',
+    path: 'species'
   }
 ];

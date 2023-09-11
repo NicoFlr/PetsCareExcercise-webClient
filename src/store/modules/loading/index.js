@@ -8,7 +8,7 @@ const state = () => ({
   isPetLoading: false,
   isOwnerLoading: false,
   isPetCardexLoading: false,
-  isSpeciesLoading: false,
+  isSpeciesLoading: false
 });
 
 export default {

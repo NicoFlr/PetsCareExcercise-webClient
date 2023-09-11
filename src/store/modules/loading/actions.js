@@ -28,8 +28,6 @@ const setIsSpeciesLoading = ({ commit }, loadingToSet) => {
   commit('setIsSpeciesLoading', loadingToSet);
 };
 
-
-
 export default {
   setLoadingOnTrue,
   setLoadingOnFalse,

@@ -14,41 +14,71 @@
       </v-icon>
     </v-app-bar>
 
+    <v-navigation-drawer
+      v-model="drawer"
+      app
+      flat
+      clipped
+      fixed
+      :mini-variant.sync="mini"
+      permanent
+    >
+      <v-list-item class="px-2 mt-n5">
+        <v-btn icon @click.stop="mini = !mini" align="right">
+          <v-icon>mdi-chevron-left</v-icon>
+        </v-btn>
+      </v-list-item>
+      <v-list dense>
+        <v-list-item
+          class="selected-tile"
+          active-class="selected-tile-active"
+          v-for="item in getNavigationItems()"
+          :key="item.title"
+          link
+        >
+          <v-list-item-icon>
+            <v-icon color="primaryVariant1">{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content @click="$router.push({ path: item.path })">
+            <v-list-item-title class="text-wrap">{{
+              $t(item.title)
+            }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
     <v-main>
       <v-container>
         <router-view />
       </v-container>
     </v-main>
-
-</v-app>
+  </v-app>
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import { MAIN_ITEMS } from '@/constants/NavigationConstants';
 
 export default {
   name: 'App',
 
- // components: {},
-
-  /*data() {
+  data() {
     return {
       drawer: false,
       mini: true,
       subServicesGroupOpened: false
     };
-  },*/
+  },
 
   computed: {
-    ...mapGetters('languageStorage', ['getStoredLanguage']),
-    //...mapGetters('userStorage', ['getUserStorageFullName']),
-    //...mapGetters('roles', ['getAdminId', 'getSupervisorId', 'getCashierId'])
+    ...mapGetters('languageStorage', ['getStoredLanguage'])
   },
 
   created() {
     this.retrieveAllBreeds();
     this.retrieveAllSpecies();
-    //this.retrieveAllPets();
+
     this.retrieveStoredLanguage();
 
     this.setThemeSettings();
@@ -78,6 +108,10 @@ export default {
       if (this.getStoredLanguage !== null) {
         this.$root.$i18n.locale = this.getStoredLanguage;
       }
+    },
+
+    getNavigationItems() {
+      return MAIN_ITEMS;
     }
   }
 };

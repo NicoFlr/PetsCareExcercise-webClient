@@ -9,7 +9,10 @@ const setPetCardexListPaginationProps = (state, { count, totalCount }) => {
   state.petCardexesPaginationProps.totalCount = totalCount;
 };
 
-const setAllDataPetCardexListPaginationProps = (state, { count, totalCount }) => {
+const setAllDataPetCardexListPaginationProps = (
+  state,
+  { count, totalCount }
+) => {
   state.allPetCardexsPaginatedProps.count = count;
   state.allPetCardexsPaginatedProps.totalCount = totalCount;
 };
@@ -28,7 +31,9 @@ const updatePetCardex = (state, PetCardexToUpdate) => {
 };
 
 const removePetCardex = (state, PetCardexToDeleteId) => {
-  state.petCardexes = state.petCardexes.filter(c => c.id !== PetCardexToDeleteId);
+  state.petCardexes = state.petCardexes.filter(
+    c => c.id !== PetCardexToDeleteId
+  );
 };
 
 export default {

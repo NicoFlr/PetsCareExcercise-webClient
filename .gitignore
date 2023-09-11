@@ -1,6 +1,8 @@
 # Created by https://www.toptal.com/developers/gitignore/api/vuejs
 # Edit at https://www.toptal.com/developers/gitignore?templates=vuejs
 
+package-lock.json
+
 ### Vuejs ###
 # Recommended template: Node.gitignore
 

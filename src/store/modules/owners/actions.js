@@ -3,16 +3,26 @@
 import axios from 'axios';
 import { PETSCARE_API_URL } from '../../../constants/Environment';
 
-const retrieveAllOwners = async ({ dispatch, commit }, options) => {
+const retrieveAllOwners = async ({ dispatch, commit }) => {
+  dispatch('loading/setIsOwnerLoading', true, { root: true });
+  try {
+    await axios.get(`${PETSCARE_API_URL}/owners`).then(response => {
+      commit('setAllOwners', response.data);
+    });
+    dispatch('loading/setIsOwnerLoading', false, { root: true });
+  } catch (error) {
+    console.error('There was an error while retrieving owners' + error);
+  }
+};
+
+const retrieveAllOwnersPagination = async ({ dispatch, commit }, options) => {
   dispatch('loading/setIsOwnerLoading', true, { root: true });
   try {
     const { page, itemsPerPage } = options;
     await axios
-      .get(
-        `${PETSCARE_API_URL}/owners?page=${page}&size=${itemsPerPage}`
-      )
+      .get(`${PETSCARE_API_URL}/owners?page=${page}&size=${itemsPerPage}`)
       .then(response => {
-        commit('setAllOwners', response.data._embedded.owners);
+        commit('setAllOwners', response.data);
         commit('setOwnerListPaginationProps', {
           count: response.data.page.size,
           totalCount: response.data.page.totalElements
@@ -65,6 +75,7 @@ const removeOwner = ({ commit }, ownerToDeleteId) => {
 
 export default {
   retrieveAllOwners,
+  retrieveAllOwnersPagination,
   addOwner,
   updateOwner,
   removeOwner

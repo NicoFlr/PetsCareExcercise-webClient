@@ -3,16 +3,26 @@
 import axios from 'axios';
 import { PETSCARE_API_URL } from '../../../constants/Environment';
 
-const retrieveAllPets = async ({ dispatch, commit }, options) => {
+const retrieveAllPets = async ({ dispatch, commit }) => {
+  dispatch('loading/setIsPetLoading', true, { root: true });
+  try {
+    await axios.get(`${PETSCARE_API_URL}/pets`).then(response => {
+      commit('setAllPets', response.data);
+    });
+    dispatch('loading/setIsPetLoading', false, { root: true });
+  } catch (error) {
+    console.error('There was an error while retrieving pets' + error);
+  }
+};
+
+const retrieveAllPetsPagination = async ({ dispatch, commit }, options) => {
   dispatch('loading/setIsPetLoading', true, { root: true });
   try {
     const { page, itemsPerPage } = options;
     await axios
-      .get(
-        `${PETSCARE_API_URL}/pets?page=${page}&size=${itemsPerPage}`
-      )
+      .get(`${PETSCARE_API_URL}/pets?page=${page}&size=${itemsPerPage}`)
       .then(response => {
-        commit('setAllPets', response.data._embedded.pets);
+        commit('setAllPets', response.data);
         commit('setPetListPaginationProps', {
           count: response.data.page.size,
           totalCount: response.data.page.totalElements
@@ -56,15 +66,14 @@ const updatePet = async ({ commit }, petToUpdate) => {
 };
 
 const removePet = ({ commit }, petToDeleteId) => {
-  axios
-    .delete(`${PETSCARE_API_URL}/pets/${petToDeleteId}`)
-    .then(response => {
-      commit('removePet', response.data.id);
-    });
+  axios.delete(`${PETSCARE_API_URL}/pets/${petToDeleteId}`).then(response => {
+    commit('removePet', response.data.id);
+  });
 };
 
 export default {
   retrieveAllPets,
+  retrieveAllPetsPagination,
   addPet,
   updatePet,
   removePet

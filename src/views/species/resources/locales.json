@@ -1,0 +1,26 @@
+{
+  "en": {
+    "name": "Name",
+    "of": "of",
+    "rowsPerPage": "Rows per page",
+    "loadingPleaseWait": "Loading, Please wait...",
+    "noSpecies": "No Species registered!",
+    "species": "Species",
+    "breed": "Breed",
+    "dateOfBirth": "Date of Birth",
+    "actions": "Actions",
+    "newSpecies": "New Species"
+  },
+  "es": {
+    "name": "Nombre",
+    "of": "de",
+    "rowsPerPage": "Filas por pagina",
+    "loadingPleaseWait": "Cargando, Por favor espere...",
+    "noSpecies": "No existen especies registradas!",
+    "species": "Especie",
+    "breed": "Raza",
+    "dateOfBirth": "Fecha de nacimiento",
+    "actions": "Acciones",
+    "newSpecies": "Nueva Especie"
+  }
+}

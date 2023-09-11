@@ -6,13 +6,9 @@ import { PETSCARE_API_URL } from '../../../constants/Environment';
 const retrieveAllBreeds = async ({ dispatch, commit }) => {
   dispatch('loading/setIsBreedLoading', true, { root: true });
   try {
-    await axios
-      .get(
-        `${PETSCARE_API_URL}/breeds`
-      )
-      .then(response => {
-        commit('setAllBreeds', response.data._embedded.breeds);
-      });
+    await axios.get(`${PETSCARE_API_URL}/breeds`).then(response => {
+      commit('setAllBreeds', response.data);
+    });
     dispatch('loading/setIsBreedLoading', false, { root: true });
   } catch (error) {
     console.error('There was an error while retrieving Breeds: ' + error);
@@ -24,11 +20,9 @@ const retrieveAllBreedsPagination = async ({ dispatch, commit }, options) => {
   try {
     const { page, itemsPerPage } = options;
     await axios
-      .get(
-        `${PETSCARE_API_URL}/breeds?page=${page}&size=${itemsPerPage}`
-      )
+      .get(`${PETSCARE_API_URL}/breeds?page=${page}&size=${itemsPerPage}`)
       .then(response => {
-        commit('setAllBreeds', response.data._embedded.breeds);
+        commit('setAllBreeds', response.data);
         commit('setBreedListPaginationProps', {
           count: response.data.page.size,
           totalCount: response.data.page.totalElements

@@ -19,9 +19,7 @@ const addPet = (state, PetToAdd) => {
 };
 
 const updatePet = (state, PetToUpdate) => {
-  const foundPetIndex = state.pets.findIndex(
-    c => c.id === PetToUpdate.id
-  );
+  const foundPetIndex = state.pets.findIndex(c => c.id === PetToUpdate.id);
   if (foundPetIndex >= 0) {
     state.pets.splice(foundPetIndex, 1, PetToUpdate);
   }

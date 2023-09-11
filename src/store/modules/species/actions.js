@@ -6,29 +6,26 @@ import { PETSCARE_API_URL } from '../../../constants/Environment';
 const retrieveAllSpecies = async ({ dispatch, commit }) => {
   dispatch('loading/setIsSpeciesLoading', true, { root: true });
   try {
-    await axios
-      .get(
-        `${PETSCARE_API_URL}/species`
-      )
-      .then(response => {
-        commit('setAllSpecies', response.data._embedded.species);
-      });
+    await axios.get(`${PETSCARE_API_URL}/species`).then(response => {
+      commit('setAllSpecies', response.data);
+    });
     dispatch('loading/setIsSpeciesLoading', false, { root: true });
   } catch (error) {
     console.error('There was an error while retrieving species' + error);
   }
 };
 
-const retrieveAllSpeciesWithPagination = async ({ dispatch, commit }, options) => {
+const retrieveAllSpeciesWithPagination = async (
+  { dispatch, commit },
+  options
+) => {
   dispatch('loading/setIsSpeciesLoading', true, { root: true });
   try {
     const { page, itemsPerPage } = options;
     await axios
-      .get(
-        `${PETSCARE_API_URL}/species?page=${page}&size=${itemsPerPage}`
-      )
+      .get(`${PETSCARE_API_URL}/species?page=${page}&size=${itemsPerPage}`)
       .then(response => {
-        commit('setAllSpecies', response.data._embedded.species);
+        commit('setAllSpecies', response.data);
         commit('setSpeciesListPaginationProps', {
           count: response.data.page.size,
           totalCount: response.data.page.totalElements
