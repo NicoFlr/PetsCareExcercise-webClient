@@ -31,10 +31,9 @@
                       v-bind="attrs"
                       v-on="on"
                       hide-details
-                      outlined
+                      variant="underlined"
                       dense
                       flat
-                      class="search-bar-orders"
                       clearable
                       @click:clear="cleanDateField"
                     ></v-text-field>
@@ -65,7 +64,6 @@
             <v-row>
               <v-col cols="12">
                 <v-textarea
-                  class="required-field"
                   v-model="petCardex.description"
                   :label="`${$t('description')} (${$t('optional')})`"
                   required
@@ -74,10 +72,10 @@
             </v-row>
             <v-row>
               <v-col cols="12">
-                <v-text-field
+                <v-textarea
                   v-model="petCardex.medication"
                   :label="`${$t('medication')} (${$t('optional')})`"
-                ></v-text-field>
+                ></v-textarea>
               </v-col>
             </v-row>
           </v-container>
@@ -87,7 +85,7 @@
           <v-btn color="primary" text @click="close">
             {{ $t('cancel') }}
           </v-btn>
-          <v-btn color="primary" :disabled="!isValid" @click="save">
+          <v-btn color="primary" @click="save">
             {{ $t('save') }}
           </v-btn>
         </v-card-actions>
@@ -132,15 +130,18 @@ export default {
     },
 
     dateRangeText() {
-      return this.date;
+      return this.petCardex.visitDate;
     }
   },
 
   methods: {
-    ...mapActions('PetCardexes', ['addPetCardex', 'updatePetCardex']),
+    ...mapActions('petCardexes', ['addPetCardex', 'updatePetCardex']),
 
     open(petCardexToUpsert) {
-      this.petCardex = Object.assign({}, petCardexToUpsert || this.defaultPetCardex);
+      this.petCardex = Object.assign(
+        {},
+        petCardexToUpsert || this.defaultPetCardex
+      );
       this.dialog = true;
     },
 
@@ -174,7 +175,9 @@ export default {
             Object.assign(
               {},
               {
-                message: this.$t('errorWhileUpdatingPetCardexInfoPleaseTryAgain'),
+                message: this.$t(
+                  'errorWhileUpdatingPetCardexInfoPleaseTryAgain'
+                ),
                 messageType: 'error'
               }
             )
@@ -188,9 +191,11 @@ export default {
             Object.assign(
               {},
               {
-                message: `${this.$t('thePetCardex')} ${this.petCardex.firstName} ${
-                  this.petCardex.lastName
-                } ${this.$t('wasCreatedSuccessfully')}`,
+                message: `${this.$t('thePetCardex')} ${
+                  this.petCardex.firstName
+                } ${this.petCardex.lastName} ${this.$t(
+                  'wasCreatedSuccessfully'
+                )}`,
                 messageType: 'success'
               }
             )

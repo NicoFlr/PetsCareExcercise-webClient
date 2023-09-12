@@ -14,7 +14,7 @@
                 <v-text-field
                   class="required-field"
                   v-model="pet.name"
-                  :label="$t('firstName')"
+                  :label="$t('name')"
                   :rules="[nameRules.required]"
                   required
                 ></v-text-field>
@@ -42,7 +42,7 @@
                   item-value="id"
                   class="required-field"
                   v-model="pet.breedId"
-                  :label="$t('breeds')"
+                  :label="$t('breed')"
                   :rules="[breedRules.required]"
                   required
                 ></v-select>
@@ -88,7 +88,6 @@
                       variant="underlined"
                       dense
                       flat
-                      class="search-bar-orders"
                       clearable
                       @click:clear="cleanDateField"
                     ></v-text-field>
@@ -120,7 +119,6 @@
             <v-row>
               <v-col cols="12">
                 <v-textarea
-                  class="required-field"
                   v-model.number="pet.notes"
                   :label="$t('notes')"
                 ></v-textarea>
@@ -174,11 +172,9 @@ export default {
       const { id } = this.pet;
       return id === '-1' ? this.$t('newPet') : this.$t('editPet');
     },
-    idRules() {
-      return { required: value => !!value || this.$t('idIsRequired') };
-    },
+
     nameRules() {
-      return { required: value => !!value || this.$t('firstNameIsRequired') };
+      return { required: value => !!value || this.$t('nameIsRequired') };
     },
 
     breedRules() {
@@ -189,7 +185,7 @@ export default {
       return { required: value => !!value || this.$t('speciesIsRequired') };
     },
     ownerRules() {
-      return { required: value => !!value || this.$t('speciesIsRequired') };
+      return { required: value => !!value || this.$t('ownerIsRequired') };
     },
 
     dateRangeText() {

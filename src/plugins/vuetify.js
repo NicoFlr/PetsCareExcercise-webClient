@@ -9,12 +9,12 @@ const vuetify = {
     options: { customProperties: true },
     themes: {
       light: {
-        primary: colors.red.darken4,
+        primary: colors.teal,
         primaryVariant1: colors.shades.black,
         primaryVariant2: colors.shades.white,
         primaryVariant3: colors.green,
         secondary: colors.grey.darken2,
-        accent: colors.red.accent1,
+        accent: colors.teal.accent1,
         surface: colors.shades.white,
         error: colors.red.accent2,
         info: colors.blue,
@@ -24,12 +24,12 @@ const vuetify = {
         redLighten: '#FF9D9D'
       },
       dark: {
-        primary: colors.red.darken4,
+        primary: colors.teal.lighten2,
         primaryVariant1: colors.shades.black,
         primaryVariant2: colors.shades.white,
         primaryVariant3: colors.green,
         secondary: colors.grey.darken2,
-        accent: colors.red.accent1,
+        accent: colors.teal.accent1,
         surface: colors.shades.black,
         error: colors.red.accent2,
         info: colors.blue,

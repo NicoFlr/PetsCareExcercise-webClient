@@ -1,0 +1,18 @@
+{
+  "es": {
+    "settings": "Ajustes",
+    "darkMode": "Modo Oscuro",
+    "preferenceLanguage": "Idioma de preferencia",
+    "choosePreferenceLanguageToNavigate": "Selecciona el idioma de tu preferencia para navegar",
+    "english": "Ingles",
+    "spanish": "Español"
+  },
+  "en": {
+    "settings": "Settings",
+    "darkMode": "Dark Mode",
+    "preferenceLanguage": "Preference language",
+    "choosePreferenceLanguageToNavigate": "Choose your preference language to navigate",
+    "english": "English",
+    "spanish": "Spanish"
+  }
+}

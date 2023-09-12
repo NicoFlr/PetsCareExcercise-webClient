@@ -120,11 +120,6 @@ export default {
     show() {
       console.log(this.options);
       console.log(this.allSpecies);
-    },
-
-    seeOrderDetail(order) {
-      this.setOrder(order);
-      this.$router.push('/orders');
     }
   }
 };

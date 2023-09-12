@@ -37,7 +37,6 @@
                       :label="$t('birthDate')"
                       ref="calendarMenuTextField"
                       prepend-inner-icon="mdi-calendar"
-                      background-color="primaryVariant2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -45,7 +44,6 @@
                       variant="underlined"
                       dense
                       flat
-                      class="search-bar-orders"
                       clearable
                       @click:clear="cleanDateField"
                     ></v-text-field>

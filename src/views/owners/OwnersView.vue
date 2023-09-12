@@ -151,11 +151,6 @@ export default {
     },
     editOwner(ownerToUpdate) {
       this.$refs.ownerDetail.open(Object.assign({}, ownerToUpdate));
-    },
-
-    seeOrderDetail(order) {
-      this.setOrder(order);
-      this.$router.push('/orders');
     }
   }
 };

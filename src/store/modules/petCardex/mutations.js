@@ -13,8 +13,8 @@ const setAllDataPetCardexListPaginationProps = (
   state,
   { count, totalCount }
 ) => {
-  state.allPetCardexsPaginatedProps.count = count;
-  state.allPetCardexsPaginatedProps.totalCount = totalCount;
+  state.allPetCardexesPaginatedProps.count = count;
+  state.allPetCardexesPaginatedProps.totalCount = totalCount;
 };
 
 const addPetCardex = (state, PetCardexToAdd) => {
@@ -22,11 +22,11 @@ const addPetCardex = (state, PetCardexToAdd) => {
 };
 
 const updatePetCardex = (state, PetCardexToUpdate) => {
-  const foundPetCardexIndex = state.petCardexs.findIndex(
+  const foundPetCardexIndex = state.petCardexes.findIndex(
     c => c.id === PetCardexToUpdate.id
   );
   if (foundPetCardexIndex >= 0) {
-    state.petCardexs.splice(foundPetCardexIndex, 1, PetCardexToUpdate);
+    state.petCardexes.splice(foundPetCardexIndex, 1, PetCardexToUpdate);
   }
 };
 

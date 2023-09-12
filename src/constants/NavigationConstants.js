@@ -10,13 +10,13 @@ export const MAIN_ITEMS = [
     path: 'owners'
   },
   {
-    title: 'breeds',
-    icon: 'mdi-shape',
-    path: 'breeds'
-  },
-  {
     title: 'species',
     icon: 'mdi-cat',
     path: 'species'
+  },
+  {
+    title: 'breeds',
+    icon: 'mdi-shape',
+    path: 'breeds'
   }
 ];

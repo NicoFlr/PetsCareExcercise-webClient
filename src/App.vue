@@ -6,10 +6,7 @@
         $t('petsCareSystem')
       }}</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-icon
-        color="primaryVariant3"
-        @click="$router.push({ path: 'settings' })"
-      >
+      <v-icon color="white" @click="$router.push({ path: 'settings' })">
         mdi-cog-outline
       </v-icon>
     </v-app-bar>
@@ -20,32 +17,25 @@
       flat
       clipped
       fixed
-      :mini-variant.sync="mini"
       permanent
+      width="11%"
     >
-      <v-list-item class="px-2 mt-n5">
-        <v-btn icon @click.stop="mini = !mini" align="right">
-          <v-icon>mdi-chevron-left</v-icon>
-        </v-btn>
+      <v-list-item
+        class="selected-tile"
+        active-class="selected-tile-active"
+        v-for="item in getNavigationItems()"
+        :key="item.title"
+        link
+      >
+        <v-list-item-icon>
+          <v-icon color="primaryVariant1">{{ item.icon }}</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content @click="$router.push({ path: item.path })">
+          <v-list-item-title class="text-wrap">{{
+            $t(item.title)
+          }}</v-list-item-title>
+        </v-list-item-content>
       </v-list-item>
-      <v-list dense>
-        <v-list-item
-          class="selected-tile"
-          active-class="selected-tile-active"
-          v-for="item in getNavigationItems()"
-          :key="item.title"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon color="primaryVariant1">{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content @click="$router.push({ path: item.path })">
-            <v-list-item-title class="text-wrap">{{
-              $t(item.title)
-            }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
     </v-navigation-drawer>
 
     <v-main>

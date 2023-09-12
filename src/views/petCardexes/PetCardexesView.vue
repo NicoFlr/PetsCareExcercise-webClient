@@ -2,7 +2,9 @@
 
 <template>
   <v-container>
-    <h1 class="ml-3 primary--text">{{ $t('petCardexes') + " " + $t('of') + " " + this.pet.name  }}</h1>
+    <h1 class="ml-3 primary--text">
+      {{ $t('petCardexes') + ' ' + $t('of') + ' ' + this.pet.name }}
+    </h1>
     <v-row class="mt-4 ml-5 mb-n7 mr-1" style="flex-wrap: nowrap">
       <v-col align="right" class="mr-4">
         <v-btn color="primary" @click="addPetCardex">
@@ -107,7 +109,10 @@ export default {
       ];
     },
 
-    ...mapGetters('petCardexes', ['allPetCardexes', 'getPetCardexListPaginationProps']),
+    ...mapGetters('petCardexes', [
+      'allPetCardexes',
+      'getPetCardexListPaginationProps'
+    ]),
     ...mapGetters('species', ['allSpecies']),
     ...mapGetters('breeds', ['allBreeds']),
     ...mapGetters('loading', ['getIsPetCardexLoading'])
@@ -117,13 +122,15 @@ export default {
     this.retrieveAllPetCardexesOfPet(this.pet.id);
   },
 
-  created(){
+  created() {
     this.pet = this.$route.params;
-    console.log(this.pet.name);
   },
 
   methods: {
-    ...mapActions('petCardexes', ['retrieveAllPetCardexes','retrieveAllPetCardexesOfPet']),
+    ...mapActions('petCardexes', [
+      'retrieveAllPetCardexes',
+      'retrieveAllPetCardexesOfPet'
+    ]),
 
     addPetCardex() {
       this.$refs.petCardexDetail.open();
@@ -136,11 +143,6 @@ export default {
     show() {
       console.log(this.options);
       console.log(this.allPetCardexes);
-    },
-
-    seeOrderDetail(order) {
-      this.setOrder(order);
-      this.$router.push('/orders');
     }
   }
 };

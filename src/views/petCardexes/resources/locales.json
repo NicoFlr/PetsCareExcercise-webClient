@@ -10,7 +10,13 @@
     "breed": "Breed",
     "dateOfBirth": "Date of Birth",
     "actions": "Actions",
-    "newPet": "New Pet"
+    "newPet": "New Pet",
+    "petCardexes": "Medical Cardex",
+    "medication": "Medication",
+    "description": "Description",
+    "visitDate": "Visit Date",
+    "newPetCardex": "New Entry",
+    "noPetCardexes": "No Entries in the Pet Cardex!"
   },
   "es": {
     "name": "Nombre",
@@ -23,6 +29,12 @@
     "breed": "Raza",
     "dateOfBirth": "Fecha de nacimiento",
     "actions": "Acciones",
-    "newPet": "Nueva Mascota"
+    "newPet": "Nueva Mascota",
+    "petCardexes": "Cardex medico",
+    "medication": "Medicacion",
+    "description": "Descripcion",
+    "visitDate": "Fecha de visita",
+    "newPetCardex": "Nuevo registro",
+    "noPetCardexes": "No Existen registros en este Cardex!"
   }
 }

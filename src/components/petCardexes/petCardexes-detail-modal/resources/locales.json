@@ -26,7 +26,12 @@
     "errorWhileCreatingTheOwner": "Error al crear el duenio, por favor intente de nuevo.",
     "newOwner": "Nuevo Duenio",
     "editOwner": "Editar Duenio",
-    "ok": "ok"
+    "ok": "ok",
+    "description": "Descripccion",
+    "medication": "Medicacion",
+    "editPetCardex": "Editar registro",
+    "newPetCardex": "Nuevo registro",
+    "visitDate": "Fecha de visita"
   },
   "en": {
     "firstName": "Name",
@@ -56,6 +61,11 @@
     "errorWhileCreatingTheOwner": "Error while creating the owner, please try again.",
     "newOwner": "New Owner",
     "editOwner": "Edit Owner",
-    "ok": "ok"
+    "ok": "ok",
+    "description": "Description",
+    "medication": "Medication",
+    "editPetCardex": "Edit entry",
+    "newPetCardex": "New entry",
+    "visitDate": "Visit Date"
   }
 }

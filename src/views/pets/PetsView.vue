@@ -143,7 +143,6 @@ export default {
 
   methods: {
     ...mapActions('pets', ['retrieveAllPets']),
-    //...mapMutations('pets', ['setPet']),
 
     addPet() {
       this.$refs.petDetail.open();
@@ -153,8 +152,7 @@ export default {
       this.$refs.petDetail.open(Object.assign({}, petToUpdate));
     },
 
-    seePetCardex(petToSeeCardex){
-
+    seePetCardex(petToSeeCardex) {
       this.$router.push({
         name: 'PetCardexes',
         params: Object.assign({}, petToSeeCardex)
@@ -164,11 +162,6 @@ export default {
     show() {
       console.log(this.options);
       console.log(this.allPets);
-    },
-
-    seeOrderDetail(order) {
-      this.setOrder(order);
-      this.$router.push('/orders');
     }
   }
 };

@@ -110,10 +110,6 @@ export default {
     },
     editBreed(breedToUpdate) {
       this.$refs.breedDetail.open(Object.assign({}, breedToUpdate));
-    },
-    seeOrderDetail(order) {
-      this.setOrder(order);
-      this.$router.push('/orders');
     }
   }
 };

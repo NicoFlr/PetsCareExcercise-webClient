@@ -18,9 +18,11 @@ const retrieveAllPetCardexes = async ({ dispatch, commit }) => {
 const retrieveAllPetCardexesOfPet = async ({ dispatch, commit }, petId) => {
   dispatch('loading/setIsPetCardexLoading', true, { root: true });
   try {
-    await axios.get(`${PETSCARE_API_URL}/pets/${petId}/pet-cardexes`).then(response => {
-      commit('setAllPetCardexes', response.data);
-    });
+    await axios
+      .get(`${PETSCARE_API_URL}/pets/${petId}/pet-cardexes`)
+      .then(response => {
+        commit('setAllPetCardexes', response.data);
+      });
     dispatch('loading/setIsPetCardexLoading', false, { root: true });
   } catch (error) {
     console.error('There was an error while retrieving PetCardexes' + error);
